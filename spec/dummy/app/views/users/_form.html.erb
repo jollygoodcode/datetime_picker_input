@@ -1,0 +1,10 @@
+<%= simple_form_for(@user) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+    <%= f.input :created_at, as: :datetime_picker, input_html: { 'data-id-for-spec' => 'datepicker' } %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

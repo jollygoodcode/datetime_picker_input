@@ -1,0 +1,1153 @@
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-07 17:53:09 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.0) lib/active_record/migration.rb:393:in `check_pending!'
+  activerecord (4.2.0) lib/active_record/migration.rb:374:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_call_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/Juan/.rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Juan/.rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Juan/.rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.8ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (35.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20150107095246)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150107095246"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-07 17:53:29 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/railties-4.2.0/lib/rails/templates/rails/welcome/index.html.erb (2.1ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-01-07 17:53:33 +0800
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 53ms (Views: 51.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffold-2d8b7094fa8d1b1a8fd721ea2dd07e0e.css?body=1" for 127.0.0.1 at 2015-01-07 17:53:33 +0800
+
+
+Started GET "/assets/users-cd88f31488e05ff408c89482270cd472.css?body=1" for 127.0.0.1 at 2015-01-07 17:53:33 +0800
+
+
+Started GET "/assets/application-28976ceac9dd00a4bc1d8bfd6ea6d4f8.css?body=1" for 127.0.0.1 at 2015-01-07 17:53:33 +0800
+
+
+Started GET "/assets/users-520f000de9c4179bc5a11504b602dff1.js?body=1" for 127.0.0.1 at 2015-01-07 17:53:33 +0800
+
+
+Started GET "/assets/application-76dc34890359ce0818f594ca04108c5b.js?body=1" for 127.0.0.1 at 2015-01-07 17:53:33 +0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-01-07 17:53:35 +0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (14.8ms)
+  Rendered users/new.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 38ms (Views: 36.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-01-07 17:59:38 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (21.7ms)
+  Rendered users/new.html.erb within layouts/application (25.0ms)
+Completed 500 Internal Server Error in 36ms
+
+ActionView::Template::Error (undefined method `input' for #<ActionView::Helpers::FormBuilder:0x007fb03cc15158>):
+    14:   <div class="field">
+    15:     <%= f.label :name %><br>
+    16:     <%= f.text_field :name %>
+    17:     <%= f.input :starts_at, as: :datetime_picker %>
+    18:   </div>
+    19:   <div class="actions">
+    20:     <%= f.submit %>
+  app/views/users/_form.html.erb:17:in `block in _app_views_users__form_html_erb___407218851411251542_70197455184920'
+  app/views/users/_form.html.erb:1:in `_app_views_users__form_html_erb___407218851411251542_70197455184920'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb___1058788046035719778_70197455347760'
+
+
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.4ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (43.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-01-07 18:00:11 +0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (33.2ms)
+  Rendered users/new.html.erb within layouts/application (33.9ms)
+Completed 500 Internal Server Error in 36ms
+
+ActionView::Template::Error (No input found for datetime_picker):
+    2:   <div class="field">
+    3:     <%= f.label :name %><br>
+    4:     <%= f.text_field :name %>
+    5:     <%= f.input :starts_at, as: :datetime_picker %>
+    6:   </div>
+    7:   <div class="actions">
+    8:     <%= f.submit %>
+  app/views/users/_form.html.erb:5:in `block in _app_views_users__form_html_erb___407218851411251542_70197450136040'
+  app/views/users/_form.html.erb:1:in `_app_views_users__form_html_erb___407218851411251542_70197450136040'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb___1058788046035719778_70197455347760'
+
+
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-01-07 18:01:52 +0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.9ms)
+  Rendered users/new.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (No input found for datetime_picker):
+    2:   <div class="field">
+    3:     <%= f.label :name %><br>
+    4:     <%= f.text_field :name %>
+    5:     <%= f.input :starts_at, as: :datetime_picker %>
+    6:   </div>
+    7:   <div class="actions">
+    8:     <%= f.submit %>
+  app/views/users/_form.html.erb:5:in `block in _app_views_users__form_html_erb___407218851411251542_70197450136040'
+  app/views/users/_form.html.erb:1:in `_app_views_users__form_html_erb___407218851411251542_70197450136040'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb___1058788046035719778_70197455347760'
+
+
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (31.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-01-07 18:02:00 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (33.8ms)
+  Rendered users/new.html.erb within layouts/application (36.8ms)
+Completed 500 Internal Server Error in 46ms
+
+ActionView::Template::Error (undefined method `starts_at' for #<User id: nil, name: nil, created_at: nil, updated_at: nil>):
+    2:   <div class="field">
+    3:     <%= f.label :name %><br>
+    4:     <%= f.text_field :name %>
+    5:     <%= f.input :starts_at, as: :datetime_picker %>
+    6:   </div>
+    7:   <div class="actions">
+    8:     <%= f.submit %>
+  app/inputs/datetime_picker_input.rb:28:in `block in input'
+  app/inputs/datetime_picker_input.rb:27:in `input'
+  app/views/users/_form.html.erb:5:in `block in _app_views_users__form_html_erb___181669557801306839_70232695048020'
+  app/views/users/_form.html.erb:1:in `_app_views_users__form_html_erb___181669557801306839_70232695048020'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__2155260091784727402_70232695184600'
+
+
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.1ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (40.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-01-07 18:02:12 +0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (4.0ms)
+  Rendered users/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 69ms (Views: 68.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-ca793e71f40e60e43e20a453afc89038.css?body=1" for 127.0.0.1 at 2015-01-07 18:02:12 +0800
+
+
+Started GET "/assets/bootstrap-datetimepicker-408f127f115bded8d1f27dfa17071275.js?body=1" for 127.0.0.1 at 2015-01-07 18:02:12 +0800
+
+
+Started GET "/assets/datetime_input-dcd694a1a95d144285a4906e7d1f5ebf.js?body=1" for 127.0.0.1 at 2015-01-07 18:02:12 +0800
+
+
+Started GET "/assets/scaffold-2d8b7094fa8d1b1a8fd721ea2dd07e0e.css?body=1" for 127.0.0.1 at 2015-01-07 18:02:12 +0800
+
+
+Started GET "/assets/users-cd88f31488e05ff408c89482270cd472.css?body=1" for 127.0.0.1 at 2015-01-07 18:02:12 +0800
+
+
+Started GET "/assets/users-520f000de9c4179bc5a11504b602dff1.js?body=1" for 127.0.0.1 at 2015-01-07 18:02:12 +0800
+
+
+Started GET "/assets/application-23b8412d6d239f6d43649d168b9e6af8.js?body=1" for 127.0.0.1 at 2015-01-07 18:02:12 +0800
+
+
+Started GET "/assets/moment-a41ae52342707b4439e8012082c54b2d.js?body=1" for 127.0.0.1 at 2015-01-07 18:02:12 +0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-01-07 18:02:45 +0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (3.1ms)
+  Rendered users/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 27ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/users-cd88f31488e05ff408c89482270cd472.css?body=1" for 127.0.0.1 at 2015-01-07 18:02:45 +0800
+
+
+Started GET "/assets/application-ca793e71f40e60e43e20a453afc89038.css?body=1" for 127.0.0.1 at 2015-01-07 18:02:45 +0800
+
+
+Started GET "/assets/moment-a41ae52342707b4439e8012082c54b2d.js?body=1" for 127.0.0.1 at 2015-01-07 18:02:45 +0800
+
+
+Started GET "/assets/users-520f000de9c4179bc5a11504b602dff1.js?body=1" for 127.0.0.1 at 2015-01-07 18:02:45 +0800
+
+
+Started GET "/assets/scaffold-2d8b7094fa8d1b1a8fd721ea2dd07e0e.css?body=1" for 127.0.0.1 at 2015-01-07 18:02:45 +0800
+
+
+Started GET "/assets/bootstrap-datetimepicker-408f127f115bded8d1f27dfa17071275.js?body=1" for 127.0.0.1 at 2015-01-07 18:02:45 +0800
+
+
+Started GET "/assets/datetime_input-dcd694a1a95d144285a4906e7d1f5ebf.js?body=1" for 127.0.0.1 at 2015-01-07 18:02:45 +0800
+
+
+Started GET "/assets/application-23b8412d6d239f6d43649d168b9e6af8.js?body=1" for 127.0.0.1 at 2015-01-07 18:02:45 +0800
+
+
+Started GET "/assets/datetime_input-dcd694a1a95d144285a4906e7d1f5ebf.js?body=1" for 127.0.0.1 at 2015-01-07 18:02:51 +0800
+
+
+Started GET "/assets/application-ca793e71f40e60e43e20a453afc89038.css?body=1" for 127.0.0.1 at 2015-01-07 18:03:00 +0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-01-07 18:03:23 +0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (3.1ms)
+  Rendered users/new.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 13ms
+
+LoadError (cannot load such file -- sass
+  (in /Users/Juan/jollygoodcode/datetime_input/vendor/assets/stylesheets/datetime_input.scss)):
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___1369936246471685919_70232695179080'
+
+
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.1ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (33.1ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-01-07 18:03:26 +0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (3.2ms)
+  Rendered users/new.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 12ms
+
+LoadError (cannot load such file -- sass
+  (in /Users/Juan/jollygoodcode/datetime_input/vendor/assets/stylesheets/datetime_input.scss)):
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___1369936246471685919_70232695179080'
+
+
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (33.7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-01-07 18:03:33 +0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (3.2ms)
+  Rendered users/new.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 12ms
+
+LoadError (cannot load such file -- sass
+  (in /Users/Juan/jollygoodcode/datetime_input/vendor/assets/stylesheets/datetime_input.scss)):
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___1369936246471685919_70232695179080'
+
+
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.9ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-01-07 18:03:57 +0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (3.1ms)
+  Rendered users/new.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 12ms
+
+LoadError (cannot load such file -- sass
+  (in /Users/Juan/jollygoodcode/datetime_input/vendor/assets/stylesheets/datetime_input.scss)):
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___1369936246471685919_70232695179080'
+
+
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.7ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (33.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-01-07 18:04:54 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (44.9ms)
+  Rendered users/new.html.erb within layouts/application (48.3ms)
+Completed 200 OK in 146ms (Views: 142.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-6f4f28099ce144d000423f880a926d66.css?body=1" for 127.0.0.1 at 2015-01-07 18:04:54 +0800
+
+
+Started GET "/assets/users-cd88f31488e05ff408c89482270cd472.css?body=1" for 127.0.0.1 at 2015-01-07 18:04:54 +0800
+
+
+Started GET "/assets/datetime_input-85dbe89e8cd3205547bb8272f7dd1e90.css?body=1" for 127.0.0.1 at 2015-01-07 18:04:54 +0800
+
+
+Started GET "/assets/scaffold-2d8b7094fa8d1b1a8fd721ea2dd07e0e.css?body=1" for 127.0.0.1 at 2015-01-07 18:04:54 +0800
+
+
+Started GET "/assets/users-520f000de9c4179bc5a11504b602dff1.js?body=1" for 127.0.0.1 at 2015-01-07 18:04:54 +0800
+
+
+Started GET "/assets/moment-a41ae52342707b4439e8012082c54b2d.js?body=1" for 127.0.0.1 at 2015-01-07 18:04:54 +0800
+
+
+Started GET "/assets/bootstrap-datetimepicker-408f127f115bded8d1f27dfa17071275.js?body=1" for 127.0.0.1 at 2015-01-07 18:04:54 +0800
+
+
+Started GET "/assets/datetime_input-dcd694a1a95d144285a4906e7d1f5ebf.js?body=1" for 127.0.0.1 at 2015-01-07 18:04:54 +0800
+
+
+Started GET "/assets/application-23b8412d6d239f6d43649d168b9e6af8.js?body=1" for 127.0.0.1 at 2015-01-07 18:04:54 +0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-01-07 18:07:59 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (29.5ms)
+  Rendered users/new.html.erb within layouts/application (33.1ms)
+Completed 200 OK in 106ms (Views: 97.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffold-2d8b7094fa8d1b1a8fd721ea2dd07e0e.css?body=1" for 127.0.0.1 at 2015-01-07 18:08:00 +0800
+
+
+Started GET "/assets/moment-a41ae52342707b4439e8012082c54b2d.js?body=1" for 127.0.0.1 at 2015-01-07 18:08:00 +0800
+
+
+Started GET "/assets/datetime_input-85dbe89e8cd3205547bb8272f7dd1e90.css?body=1" for 127.0.0.1 at 2015-01-07 18:08:00 +0800
+
+
+Started GET "/assets/users-520f000de9c4179bc5a11504b602dff1.js?body=1" for 127.0.0.1 at 2015-01-07 18:08:00 +0800
+
+
+Started GET "/assets/users-cd88f31488e05ff408c89482270cd472.css?body=1" for 127.0.0.1 at 2015-01-07 18:08:00 +0800
+
+
+Started GET "/assets/application-6f4f28099ce144d000423f880a926d66.css?body=1" for 127.0.0.1 at 2015-01-07 18:08:00 +0800
+
+
+Started GET "/assets/datetime_input-dcd694a1a95d144285a4906e7d1f5ebf.js?body=1" for 127.0.0.1 at 2015-01-07 18:08:00 +0800
+
+
+Started GET "/assets/application-23b8412d6d239f6d43649d168b9e6af8.js?body=1" for 127.0.0.1 at 2015-01-07 18:08:00 +0800
+
+
+Started GET "/assets/bootstrap-datetimepicker-408f127f115bded8d1f27dfa17071275.js?body=1" for 127.0.0.1 at 2015-01-07 18:08:00 +0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-01-07 18:10:17 +0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.8ms)
+  Rendered users/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 505ms (Views: 504.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/datetime_input-85dbe89e8cd3205547bb8272f7dd1e90.css?body=1" for 127.0.0.1 at 2015-01-07 18:10:17 +0800
+
+
+Started GET "/assets/application-151c3bd8ecd6fc4b95479c573226afa4.css?body=1" for 127.0.0.1 at 2015-01-07 18:10:17 +0800
+
+
+Started GET "/assets/scaffold-2d8b7094fa8d1b1a8fd721ea2dd07e0e.css?body=1" for 127.0.0.1 at 2015-01-07 18:10:17 +0800
+
+
+Started GET "/assets/bootstrap-datetimepicker-408f127f115bded8d1f27dfa17071275.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:17 +0800
+
+
+Started GET "/assets/application-29c6b0eb5c91dbf650b4b808abc76447.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:17 +0800
+
+
+Started GET "/assets/users-cd88f31488e05ff408c89482270cd472.css?body=1" for 127.0.0.1 at 2015-01-07 18:10:17 +0800
+
+
+Started GET "/assets/moment-a41ae52342707b4439e8012082c54b2d.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:17 +0800
+
+
+Started GET "/assets/datetime_input-dcd694a1a95d144285a4906e7d1f5ebf.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:17 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:17 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:17 +0800
+
+
+Started GET "/assets/bootstrap/affix-d40f971ee2f767faaf6d6af09b6891b5.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:17 +0800
+
+
+Started GET "/assets/bootstrap/alert-f76ec816bdcc68a2282059928ef1e52d.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:17 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:17 +0800
+
+
+Started GET "/assets/bootstrap/button-7404970dda5275bf4aa732d8ef1db223.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:17 +0800
+
+
+Started GET "/assets/bootstrap/carousel-c2724c63c7e679aa20278f2f022560cb.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:17 +0800
+
+
+Started GET "/assets/bootstrap/collapse-4e4d6ff4fc17afac1d72bdb87dcf9e03.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:17 +0800
+
+
+Started GET "/assets/bootstrap/dropdown-58cd9071a88158a9a95dda2320da8a92.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:17 +0800
+
+
+Started GET "/assets/bootstrap/tab-7d45589786306b417d1664184ca8fbf8.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:17 +0800
+
+
+Started GET "/assets/bootstrap/transition-79362283457bd064d3b7ff06acb0f011.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:17 +0800
+
+
+Started GET "/assets/bootstrap/scrollspy-f9ba5cb4717a71f39303d90f29813c97.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:17 +0800
+
+
+Started GET "/assets/bootstrap/modal-98b3faca355a223ded5349bc93bdd4a7.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:17 +0800
+
+
+Started GET "/assets/bootstrap/tooltip-ad8aa40c8d62097d02080d81c3d49762.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:17 +0800
+
+
+Started GET "/assets/bootstrap/popover-1fad9cb69620161b2a0c5c6ea67ae644.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:17 +0800
+
+
+Started GET "/assets/bootstrap-sprockets-81d188b7e8ff849b2ba0fb3c92f98b15.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:17 +0800
+
+
+Started GET "/assets/users-520f000de9c4179bc5a11504b602dff1.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:17 +0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-01-07 18:10:24 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (47.8ms)
+  Rendered users/new.html.erb within layouts/application (51.6ms)
+Completed 200 OK in 218ms (Views: 204.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/datetime_input-85dbe89e8cd3205547bb8272f7dd1e90.css?body=1" for 127.0.0.1 at 2015-01-07 18:10:25 +0800
+
+
+Started GET "/assets/scaffold-2d8b7094fa8d1b1a8fd721ea2dd07e0e.css?body=1" for 127.0.0.1 at 2015-01-07 18:10:25 +0800
+
+
+Started GET "/assets/application-151c3bd8ecd6fc4b95479c573226afa4.css?body=1" for 127.0.0.1 at 2015-01-07 18:10:25 +0800
+
+
+Started GET "/assets/users-cd88f31488e05ff408c89482270cd472.css?body=1" for 127.0.0.1 at 2015-01-07 18:10:25 +0800
+
+
+Started GET "/assets/datetime_input-dcd694a1a95d144285a4906e7d1f5ebf.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:25 +0800
+
+
+Started GET "/assets/moment-a41ae52342707b4439e8012082c54b2d.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:25 +0800
+
+
+Started GET "/assets/bootstrap-datetimepicker-408f127f115bded8d1f27dfa17071275.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:25 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:25 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:25 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:25 +0800
+
+
+Started GET "/assets/bootstrap/affix-d40f971ee2f767faaf6d6af09b6891b5.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:25 +0800
+
+
+Started GET "/assets/bootstrap/alert-f76ec816bdcc68a2282059928ef1e52d.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:25 +0800
+
+
+Started GET "/assets/bootstrap/button-7404970dda5275bf4aa732d8ef1db223.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:25 +0800
+
+
+Started GET "/assets/bootstrap/carousel-c2724c63c7e679aa20278f2f022560cb.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:25 +0800
+
+
+Started GET "/assets/bootstrap/collapse-4e4d6ff4fc17afac1d72bdb87dcf9e03.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:25 +0800
+
+
+Started GET "/assets/bootstrap/dropdown-58cd9071a88158a9a95dda2320da8a92.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:25 +0800
+
+
+Started GET "/assets/bootstrap/tab-7d45589786306b417d1664184ca8fbf8.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:25 +0800
+
+
+Started GET "/assets/bootstrap/transition-79362283457bd064d3b7ff06acb0f011.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:25 +0800
+
+
+Started GET "/assets/bootstrap/scrollspy-f9ba5cb4717a71f39303d90f29813c97.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:25 +0800
+
+
+Started GET "/assets/bootstrap/modal-98b3faca355a223ded5349bc93bdd4a7.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:25 +0800
+
+
+Started GET "/assets/bootstrap/tooltip-ad8aa40c8d62097d02080d81c3d49762.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:25 +0800
+
+
+Started GET "/assets/bootstrap/popover-1fad9cb69620161b2a0c5c6ea67ae644.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:25 +0800
+
+
+Started GET "/assets/bootstrap-sprockets-81d188b7e8ff849b2ba0fb3c92f98b15.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:25 +0800
+
+
+Started GET "/assets/users-520f000de9c4179bc5a11504b602dff1.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:25 +0800
+
+
+Started GET "/assets/application-29c6b0eb5c91dbf650b4b808abc76447.js?body=1" for 127.0.0.1 at 2015-01-07 18:10:25 +0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-01-07 18:13:10 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (32.4ms)
+  Rendered users/new.html.erb within layouts/application (35.6ms)
+Completed 200 OK in 1902ms (Views: 1892.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-88306fad61e3b65a2ae254c3e9cf0484.css?body=1" for 127.0.0.1 at 2015-01-07 18:13:12 +0800
+
+
+Started GET "/assets/moment-a41ae52342707b4439e8012082c54b2d.js?body=1" for 127.0.0.1 at 2015-01-07 18:13:12 +0800
+
+
+Started GET "/assets/bootstrap-datetimepicker-408f127f115bded8d1f27dfa17071275.js?body=1" for 127.0.0.1 at 2015-01-07 18:13:12 +0800
+
+
+Started GET "/assets/datetime_input-dcd694a1a95d144285a4906e7d1f5ebf.js?body=1" for 127.0.0.1 at 2015-01-07 18:13:12 +0800
+
+
+Started GET "/assets/application-48fd2d5d97b59b87327f63fe570c3d3b.js?body=1" for 127.0.0.1 at 2015-01-07 18:13:12 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for 127.0.0.1 at 2015-01-07 18:13:12 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for 127.0.0.1 at 2015-01-07 18:13:12 +0800
+
+
+Started GET "/assets/bootstrap/affix-d40f971ee2f767faaf6d6af09b6891b5.js?body=1" for 127.0.0.1 at 2015-01-07 18:13:12 +0800
+
+
+Started GET "/assets/bootstrap/alert-f76ec816bdcc68a2282059928ef1e52d.js?body=1" for 127.0.0.1 at 2015-01-07 18:13:12 +0800
+
+
+Started GET "/assets/bootstrap/button-7404970dda5275bf4aa732d8ef1db223.js?body=1" for 127.0.0.1 at 2015-01-07 18:13:12 +0800
+
+
+Started GET "/assets/bootstrap/carousel-c2724c63c7e679aa20278f2f022560cb.js?body=1" for 127.0.0.1 at 2015-01-07 18:13:12 +0800
+
+
+Started GET "/assets/bootstrap/collapse-4e4d6ff4fc17afac1d72bdb87dcf9e03.js?body=1" for 127.0.0.1 at 2015-01-07 18:13:12 +0800
+
+
+Started GET "/assets/bootstrap/dropdown-58cd9071a88158a9a95dda2320da8a92.js?body=1" for 127.0.0.1 at 2015-01-07 18:13:12 +0800
+
+
+Started GET "/assets/bootstrap/tab-7d45589786306b417d1664184ca8fbf8.js?body=1" for 127.0.0.1 at 2015-01-07 18:13:12 +0800
+
+
+Started GET "/assets/bootstrap/transition-79362283457bd064d3b7ff06acb0f011.js?body=1" for 127.0.0.1 at 2015-01-07 18:13:12 +0800
+
+
+Started GET "/assets/bootstrap/scrollspy-f9ba5cb4717a71f39303d90f29813c97.js?body=1" for 127.0.0.1 at 2015-01-07 18:13:12 +0800
+
+
+Started GET "/assets/bootstrap/modal-98b3faca355a223ded5349bc93bdd4a7.js?body=1" for 127.0.0.1 at 2015-01-07 18:13:12 +0800
+
+
+Started GET "/assets/bootstrap/tooltip-ad8aa40c8d62097d02080d81c3d49762.js?body=1" for 127.0.0.1 at 2015-01-07 18:13:12 +0800
+
+
+Started GET "/assets/bootstrap/popover-1fad9cb69620161b2a0c5c6ea67ae644.js?body=1" for 127.0.0.1 at 2015-01-07 18:13:12 +0800
+
+
+Started GET "/assets/bootstrap-sprockets-81d188b7e8ff849b2ba0fb3c92f98b15.js?body=1" for 127.0.0.1 at 2015-01-07 18:13:12 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for 127.0.0.1 at 2015-01-07 18:13:12 +0800
+
+
+Started GET "/assets/users-520f000de9c4179bc5a11504b602dff1.js?body=1" for 127.0.0.1 at 2015-01-07 18:13:12 +0800
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-195cb410b49d75c104a5bc6ad385ac77.woff" for 127.0.0.1 at 2015-01-07 18:13:12 +0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-01-07 18:14:07 +0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (4.7ms)
+  Rendered users/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 127ms (Views: 125.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-01-07 18:14:09 +0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.8ms)
+  Rendered users/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 81ms (Views: 80.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-88306fad61e3b65a2ae254c3e9cf0484.css?body=1" for 127.0.0.1 at 2015-01-07 18:14:09 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for 127.0.0.1 at 2015-01-07 18:14:09 +0800
+
+
+Started GET "/assets/bootstrap/alert-f76ec816bdcc68a2282059928ef1e52d.js?body=1" for 127.0.0.1 at 2015-01-07 18:14:09 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for 127.0.0.1 at 2015-01-07 18:14:09 +0800
+
+
+Started GET "/assets/bootstrap/affix-d40f971ee2f767faaf6d6af09b6891b5.js?body=1" for 127.0.0.1 at 2015-01-07 18:14:09 +0800
+
+
+Started GET "/assets/bootstrap/button-7404970dda5275bf4aa732d8ef1db223.js?body=1" for 127.0.0.1 at 2015-01-07 18:14:09 +0800
+
+
+Started GET "/assets/bootstrap/carousel-c2724c63c7e679aa20278f2f022560cb.js?body=1" for 127.0.0.1 at 2015-01-07 18:14:09 +0800
+
+
+Started GET "/assets/bootstrap/collapse-4e4d6ff4fc17afac1d72bdb87dcf9e03.js?body=1" for 127.0.0.1 at 2015-01-07 18:14:09 +0800
+
+
+Started GET "/assets/bootstrap/dropdown-58cd9071a88158a9a95dda2320da8a92.js?body=1" for 127.0.0.1 at 2015-01-07 18:14:09 +0800
+
+
+Started GET "/assets/bootstrap/tab-7d45589786306b417d1664184ca8fbf8.js?body=1" for 127.0.0.1 at 2015-01-07 18:14:09 +0800
+
+
+Started GET "/assets/bootstrap/transition-79362283457bd064d3b7ff06acb0f011.js?body=1" for 127.0.0.1 at 2015-01-07 18:14:09 +0800
+
+
+Started GET "/assets/bootstrap/scrollspy-f9ba5cb4717a71f39303d90f29813c97.js?body=1" for 127.0.0.1 at 2015-01-07 18:14:09 +0800
+
+
+Started GET "/assets/application-4ea8d1b13508bfc4d3cfdb58233e1871.js?body=1" for 127.0.0.1 at 2015-01-07 18:14:09 +0800
+
+
+Started GET "/assets/bootstrap/modal-98b3faca355a223ded5349bc93bdd4a7.js?body=1" for 127.0.0.1 at 2015-01-07 18:14:09 +0800
+
+
+Started GET "/assets/bootstrap/tooltip-ad8aa40c8d62097d02080d81c3d49762.js?body=1" for 127.0.0.1 at 2015-01-07 18:14:09 +0800
+
+
+Started GET "/assets/bootstrap/popover-1fad9cb69620161b2a0c5c6ea67ae644.js?body=1" for 127.0.0.1 at 2015-01-07 18:14:09 +0800
+
+
+Started GET "/assets/bootstrap-sprockets-81d188b7e8ff849b2ba0fb3c92f98b15.js?body=1" for 127.0.0.1 at 2015-01-07 18:14:09 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for 127.0.0.1 at 2015-01-07 18:14:09 +0800
+
+
+Started GET "/assets/bootstrap-datetimepicker-408f127f115bded8d1f27dfa17071275.js?body=1" for 127.0.0.1 at 2015-01-07 18:14:09 +0800
+
+
+Started GET "/assets/moment-a41ae52342707b4439e8012082c54b2d.js?body=1" for 127.0.0.1 at 2015-01-07 18:14:09 +0800
+
+
+Started GET "/assets/datetime_input-dcd694a1a95d144285a4906e7d1f5ebf.js?body=1" for 127.0.0.1 at 2015-01-07 18:14:09 +0800
+
+
+Started GET "/assets/users-520f000de9c4179bc5a11504b602dff1.js?body=1" for 127.0.0.1 at 2015-01-07 18:14:09 +0800
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-195cb410b49d75c104a5bc6ad385ac77.woff" for 127.0.0.1 at 2015-01-07 18:14:09 +0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-01-07 18:24:09 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (35.3ms)
+  Rendered users/new.html.erb within layouts/application (38.8ms)
+Completed 200 OK in 1324ms (Views: 1309.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application-88306fad61e3b65a2ae254c3e9cf0484.css?body=1" for 127.0.0.1 at 2015-01-07 18:24:10 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:10 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:10 +0800
+
+
+Started GET "/assets/bootstrap/affix-d40f971ee2f767faaf6d6af09b6891b5.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:10 +0800
+
+
+Started GET "/assets/bootstrap/button-7404970dda5275bf4aa732d8ef1db223.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:10 +0800
+
+
+Started GET "/assets/bootstrap/alert-f76ec816bdcc68a2282059928ef1e52d.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:10 +0800
+
+
+Started GET "/assets/bootstrap/carousel-c2724c63c7e679aa20278f2f022560cb.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:10 +0800
+
+
+Started GET "/assets/bootstrap/collapse-4e4d6ff4fc17afac1d72bdb87dcf9e03.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:10 +0800
+
+
+Started GET "/assets/bootstrap/dropdown-58cd9071a88158a9a95dda2320da8a92.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:10 +0800
+
+
+Started GET "/assets/bootstrap/tab-7d45589786306b417d1664184ca8fbf8.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:10 +0800
+
+
+Started GET "/assets/bootstrap/transition-79362283457bd064d3b7ff06acb0f011.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:10 +0800
+
+
+Started GET "/assets/bootstrap/scrollspy-f9ba5cb4717a71f39303d90f29813c97.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:10 +0800
+
+
+Started GET "/assets/bootstrap/modal-98b3faca355a223ded5349bc93bdd4a7.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:10 +0800
+
+
+Started GET "/assets/bootstrap/tooltip-ad8aa40c8d62097d02080d81c3d49762.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:10 +0800
+
+
+Started GET "/assets/bootstrap/popover-1fad9cb69620161b2a0c5c6ea67ae644.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:10 +0800
+
+
+Started GET "/assets/bootstrap-sprockets-81d188b7e8ff849b2ba0fb3c92f98b15.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:10 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:10 +0800
+
+
+Started GET "/assets/moment-a41ae52342707b4439e8012082c54b2d.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:10 +0800
+
+
+Started GET "/assets/bootstrap-datetimepicker-408f127f115bded8d1f27dfa17071275.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:10 +0800
+
+
+Started GET "/assets/datetime_input-dcd694a1a95d144285a4906e7d1f5ebf.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:10 +0800
+
+
+Started GET "/assets/users-520f000de9c4179bc5a11504b602dff1.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:10 +0800
+
+
+Started GET "/assets/application-4ea8d1b13508bfc4d3cfdb58233e1871.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:10 +0800
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-195cb410b49d75c104a5bc6ad385ac77.woff" for 127.0.0.1 at 2015-01-07 18:24:10 +0800
+
+
+Started GET "/assets/application-88306fad61e3b65a2ae254c3e9cf0484.css?body=1" for 127.0.0.1 at 2015-01-07 18:24:15 +0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-01-07 18:24:53 +0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (15.5ms)
+  Rendered users/new.html.erb within layouts/application (16.5ms)
+Completed 500 Internal Server Error in 20ms
+
+ActionView::Template::Error (undefined local variable or method `id_spec' for #<#<Class:0x007fdef68bb410>:0x007fdef73db228>):
+    2:   <div class="field">
+    3:     <%= f.label :name %><br>
+    4:     <%= f.text_field :name %>
+    5:     <%= f.input :created_at, as: :datetime_picker, id_spec => 'datapicker' %>
+    6:   </div>
+    7:   <div class="actions">
+    8:     <%= f.submit %>
+  app/views/users/_form.html.erb:5:in `block in _app_views_users__form_html_erb___2088638519836797477_70297803703900'
+  app/views/users/_form.html.erb:1:in `_app_views_users__form_html_erb___2088638519836797477_70297803703900'
+  app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__3379585141203026537_70297800694420'
+
+
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.7ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (50.8ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-01-07 18:24:57 +0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (4.5ms)
+  Rendered users/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 79ms (Views: 78.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-88306fad61e3b65a2ae254c3e9cf0484.css?body=1" for 127.0.0.1 at 2015-01-07 18:24:57 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:57 +0800
+
+
+Started GET "/assets/bootstrap/carousel-c2724c63c7e679aa20278f2f022560cb.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:57 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:57 +0800
+
+
+Started GET "/assets/bootstrap/affix-d40f971ee2f767faaf6d6af09b6891b5.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:58 +0800
+
+
+Started GET "/assets/bootstrap/dropdown-58cd9071a88158a9a95dda2320da8a92.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:58 +0800
+
+
+Started GET "/assets/bootstrap/collapse-4e4d6ff4fc17afac1d72bdb87dcf9e03.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:58 +0800
+
+
+Started GET "/assets/bootstrap/alert-f76ec816bdcc68a2282059928ef1e52d.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:58 +0800
+
+
+Started GET "/assets/bootstrap/button-7404970dda5275bf4aa732d8ef1db223.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:58 +0800
+
+
+Started GET "/assets/bootstrap/tab-7d45589786306b417d1664184ca8fbf8.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:58 +0800
+
+
+Started GET "/assets/bootstrap/transition-79362283457bd064d3b7ff06acb0f011.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:58 +0800
+
+
+Started GET "/assets/bootstrap/scrollspy-f9ba5cb4717a71f39303d90f29813c97.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:58 +0800
+
+
+Started GET "/assets/bootstrap/modal-98b3faca355a223ded5349bc93bdd4a7.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:58 +0800
+
+
+Started GET "/assets/bootstrap/tooltip-ad8aa40c8d62097d02080d81c3d49762.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:58 +0800
+
+
+Started GET "/assets/bootstrap/popover-1fad9cb69620161b2a0c5c6ea67ae644.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:58 +0800
+
+
+Started GET "/assets/bootstrap-sprockets-81d188b7e8ff849b2ba0fb3c92f98b15.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:58 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:58 +0800
+
+
+Started GET "/assets/bootstrap-datetimepicker-408f127f115bded8d1f27dfa17071275.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:58 +0800
+
+
+Started GET "/assets/moment-a41ae52342707b4439e8012082c54b2d.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:58 +0800
+
+
+Started GET "/assets/datetime_input-dcd694a1a95d144285a4906e7d1f5ebf.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:58 +0800
+
+
+Started GET "/assets/users-520f000de9c4179bc5a11504b602dff1.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:58 +0800
+
+
+Started GET "/assets/application-4ea8d1b13508bfc4d3cfdb58233e1871.js?body=1" for 127.0.0.1 at 2015-01-07 18:24:58 +0800
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-195cb410b49d75c104a5bc6ad385ac77.woff" for 127.0.0.1 at 2015-01-07 18:24:58 +0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-01-07 18:25:15 +0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (3.3ms)
+  Rendered users/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 81ms (Views: 80.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-88306fad61e3b65a2ae254c3e9cf0484.css?body=1" for 127.0.0.1 at 2015-01-07 18:25:16 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for 127.0.0.1 at 2015-01-07 18:25:16 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for 127.0.0.1 at 2015-01-07 18:25:16 +0800
+
+
+Started GET "/assets/bootstrap/affix-d40f971ee2f767faaf6d6af09b6891b5.js?body=1" for 127.0.0.1 at 2015-01-07 18:25:16 +0800
+
+
+Started GET "/assets/bootstrap/alert-f76ec816bdcc68a2282059928ef1e52d.js?body=1" for 127.0.0.1 at 2015-01-07 18:25:16 +0800
+
+
+Started GET "/assets/bootstrap/button-7404970dda5275bf4aa732d8ef1db223.js?body=1" for 127.0.0.1 at 2015-01-07 18:25:16 +0800
+
+
+Started GET "/assets/bootstrap/carousel-c2724c63c7e679aa20278f2f022560cb.js?body=1" for 127.0.0.1 at 2015-01-07 18:25:16 +0800
+
+
+Started GET "/assets/bootstrap/collapse-4e4d6ff4fc17afac1d72bdb87dcf9e03.js?body=1" for 127.0.0.1 at 2015-01-07 18:25:16 +0800
+
+
+Started GET "/assets/bootstrap/dropdown-58cd9071a88158a9a95dda2320da8a92.js?body=1" for 127.0.0.1 at 2015-01-07 18:25:16 +0800
+
+
+Started GET "/assets/bootstrap/tab-7d45589786306b417d1664184ca8fbf8.js?body=1" for 127.0.0.1 at 2015-01-07 18:25:16 +0800
+
+
+Started GET "/assets/bootstrap/transition-79362283457bd064d3b7ff06acb0f011.js?body=1" for 127.0.0.1 at 2015-01-07 18:25:16 +0800
+
+
+Started GET "/assets/bootstrap/scrollspy-f9ba5cb4717a71f39303d90f29813c97.js?body=1" for 127.0.0.1 at 2015-01-07 18:25:16 +0800
+
+
+Started GET "/assets/bootstrap/modal-98b3faca355a223ded5349bc93bdd4a7.js?body=1" for 127.0.0.1 at 2015-01-07 18:25:16 +0800
+
+
+Started GET "/assets/bootstrap/tooltip-ad8aa40c8d62097d02080d81c3d49762.js?body=1" for 127.0.0.1 at 2015-01-07 18:25:16 +0800
+
+
+Started GET "/assets/bootstrap/popover-1fad9cb69620161b2a0c5c6ea67ae644.js?body=1" for 127.0.0.1 at 2015-01-07 18:25:16 +0800
+
+
+Started GET "/assets/bootstrap-sprockets-81d188b7e8ff849b2ba0fb3c92f98b15.js?body=1" for 127.0.0.1 at 2015-01-07 18:25:16 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for 127.0.0.1 at 2015-01-07 18:25:16 +0800
+
+
+Started GET "/assets/moment-a41ae52342707b4439e8012082c54b2d.js?body=1" for 127.0.0.1 at 2015-01-07 18:25:16 +0800
+
+
+Started GET "/assets/bootstrap-datetimepicker-408f127f115bded8d1f27dfa17071275.js?body=1" for 127.0.0.1 at 2015-01-07 18:25:16 +0800
+
+
+Started GET "/assets/datetime_input-dcd694a1a95d144285a4906e7d1f5ebf.js?body=1" for 127.0.0.1 at 2015-01-07 18:25:16 +0800
+
+
+Started GET "/assets/application-4ea8d1b13508bfc4d3cfdb58233e1871.js?body=1" for 127.0.0.1 at 2015-01-07 18:25:16 +0800
+
+
+Started GET "/assets/users-520f000de9c4179bc5a11504b602dff1.js?body=1" for 127.0.0.1 at 2015-01-07 18:25:16 +0800
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-195cb410b49d75c104a5bc6ad385ac77.woff" for 127.0.0.1 at 2015-01-07 18:25:16 +0800
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-01-07 18:38:38 +0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (3.3ms)
+  Rendered users/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 104ms (Views: 103.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-88306fad61e3b65a2ae254c3e9cf0484.css?body=1" for 127.0.0.1 at 2015-01-07 18:38:38 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for 127.0.0.1 at 2015-01-07 18:38:38 +0800
+
+
+Started GET "/assets/bootstrap/affix-d40f971ee2f767faaf6d6af09b6891b5.js?body=1" for 127.0.0.1 at 2015-01-07 18:38:38 +0800
+
+
+Started GET "/assets/bootstrap/button-7404970dda5275bf4aa732d8ef1db223.js?body=1" for 127.0.0.1 at 2015-01-07 18:38:38 +0800
+
+
+Started GET "/assets/bootstrap/alert-f76ec816bdcc68a2282059928ef1e52d.js?body=1" for 127.0.0.1 at 2015-01-07 18:38:38 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for 127.0.0.1 at 2015-01-07 18:38:38 +0800
+
+
+Started GET "/assets/bootstrap/carousel-c2724c63c7e679aa20278f2f022560cb.js?body=1" for 127.0.0.1 at 2015-01-07 18:38:38 +0800
+
+
+Started GET "/assets/bootstrap/collapse-4e4d6ff4fc17afac1d72bdb87dcf9e03.js?body=1" for 127.0.0.1 at 2015-01-07 18:38:38 +0800
+
+
+Started GET "/assets/bootstrap/dropdown-58cd9071a88158a9a95dda2320da8a92.js?body=1" for 127.0.0.1 at 2015-01-07 18:38:38 +0800
+
+
+Started GET "/assets/bootstrap/tab-7d45589786306b417d1664184ca8fbf8.js?body=1" for 127.0.0.1 at 2015-01-07 18:38:38 +0800
+
+
+Started GET "/assets/bootstrap/transition-79362283457bd064d3b7ff06acb0f011.js?body=1" for 127.0.0.1 at 2015-01-07 18:38:38 +0800
+
+
+Started GET "/assets/bootstrap/scrollspy-f9ba5cb4717a71f39303d90f29813c97.js?body=1" for 127.0.0.1 at 2015-01-07 18:38:38 +0800
+
+
+Started GET "/assets/bootstrap/modal-98b3faca355a223ded5349bc93bdd4a7.js?body=1" for 127.0.0.1 at 2015-01-07 18:38:38 +0800
+
+
+Started GET "/assets/bootstrap/tooltip-ad8aa40c8d62097d02080d81c3d49762.js?body=1" for 127.0.0.1 at 2015-01-07 18:38:38 +0800
+
+
+Started GET "/assets/bootstrap/popover-1fad9cb69620161b2a0c5c6ea67ae644.js?body=1" for 127.0.0.1 at 2015-01-07 18:38:38 +0800
+
+
+Started GET "/assets/bootstrap-sprockets-81d188b7e8ff849b2ba0fb3c92f98b15.js?body=1" for 127.0.0.1 at 2015-01-07 18:38:38 +0800
+
+
+Started GET "/assets/moment-a41ae52342707b4439e8012082c54b2d.js?body=1" for 127.0.0.1 at 2015-01-07 18:38:38 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for 127.0.0.1 at 2015-01-07 18:38:38 +0800
+
+
+Started GET "/assets/bootstrap-datetimepicker-408f127f115bded8d1f27dfa17071275.js?body=1" for 127.0.0.1 at 2015-01-07 18:38:38 +0800
+
+
+Started GET "/assets/datetime_input-dcd694a1a95d144285a4906e7d1f5ebf.js?body=1" for 127.0.0.1 at 2015-01-07 18:38:38 +0800
+
+
+Started GET "/assets/users-520f000de9c4179bc5a11504b602dff1.js?body=1" for 127.0.0.1 at 2015-01-07 18:38:38 +0800
+
+
+Started GET "/assets/application-4ea8d1b13508bfc4d3cfdb58233e1871.js?body=1" for 127.0.0.1 at 2015-01-07 18:38:38 +0800
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-195cb410b49d75c104a5bc6ad385ac77.woff" for 127.0.0.1 at 2015-01-07 18:38:38 +0800
+
+
+Started GET "/" for 127.0.0.1 at 2015-01-07 18:53:49 +0800
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/Juan/.gem/ruby/2.2.0/gems/railties-4.2.0/lib/rails/templates/rails/welcome/index.html.erb (1.1ms)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-01-07 18:53:57 +0800
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (4.2ms)
+  Rendered users/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 88ms (Views: 87.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-88306fad61e3b65a2ae254c3e9cf0484.css?body=1" for 127.0.0.1 at 2015-01-07 18:53:57 +0800
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for 127.0.0.1 at 2015-01-07 18:53:57 +0800
+
+
+Started GET "/assets/bootstrap/carousel-c2724c63c7e679aa20278f2f022560cb.js?body=1" for 127.0.0.1 at 2015-01-07 18:53:57 +0800
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for 127.0.0.1 at 2015-01-07 18:53:57 +0800
+
+
+Started GET "/assets/bootstrap/affix-d40f971ee2f767faaf6d6af09b6891b5.js?body=1" for 127.0.0.1 at 2015-01-07 18:53:57 +0800
+
+
+Started GET "/assets/bootstrap/collapse-4e4d6ff4fc17afac1d72bdb87dcf9e03.js?body=1" for 127.0.0.1 at 2015-01-07 18:53:57 +0800
+
+
+Started GET "/assets/bootstrap/alert-f76ec816bdcc68a2282059928ef1e52d.js?body=1" for 127.0.0.1 at 2015-01-07 18:53:57 +0800
+
+
+Started GET "/assets/bootstrap/dropdown-58cd9071a88158a9a95dda2320da8a92.js?body=1" for 127.0.0.1 at 2015-01-07 18:53:57 +0800
+
+
+Started GET "/assets/bootstrap/button-7404970dda5275bf4aa732d8ef1db223.js?body=1" for 127.0.0.1 at 2015-01-07 18:53:57 +0800
+
+
+Started GET "/assets/bootstrap/tab-7d45589786306b417d1664184ca8fbf8.js?body=1" for 127.0.0.1 at 2015-01-07 18:53:57 +0800
+
+
+Started GET "/assets/bootstrap/transition-79362283457bd064d3b7ff06acb0f011.js?body=1" for 127.0.0.1 at 2015-01-07 18:53:57 +0800
+
+
+Started GET "/assets/bootstrap/scrollspy-f9ba5cb4717a71f39303d90f29813c97.js?body=1" for 127.0.0.1 at 2015-01-07 18:53:57 +0800
+
+
+Started GET "/assets/bootstrap/modal-98b3faca355a223ded5349bc93bdd4a7.js?body=1" for 127.0.0.1 at 2015-01-07 18:53:57 +0800
+
+
+Started GET "/assets/bootstrap/tooltip-ad8aa40c8d62097d02080d81c3d49762.js?body=1" for 127.0.0.1 at 2015-01-07 18:53:57 +0800
+
+
+Started GET "/assets/bootstrap/popover-1fad9cb69620161b2a0c5c6ea67ae644.js?body=1" for 127.0.0.1 at 2015-01-07 18:53:57 +0800
+
+
+Started GET "/assets/bootstrap-sprockets-81d188b7e8ff849b2ba0fb3c92f98b15.js?body=1" for 127.0.0.1 at 2015-01-07 18:53:57 +0800
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for 127.0.0.1 at 2015-01-07 18:53:57 +0800
+
+
+Started GET "/assets/moment-a41ae52342707b4439e8012082c54b2d.js?body=1" for 127.0.0.1 at 2015-01-07 18:53:57 +0800
+
+
+Started GET "/assets/bootstrap-datetimepicker-408f127f115bded8d1f27dfa17071275.js?body=1" for 127.0.0.1 at 2015-01-07 18:53:57 +0800
+
+
+Started GET "/assets/datetime_input-dcd694a1a95d144285a4906e7d1f5ebf.js?body=1" for 127.0.0.1 at 2015-01-07 18:53:57 +0800
+
+
+Started GET "/assets/users-520f000de9c4179bc5a11504b602dff1.js?body=1" for 127.0.0.1 at 2015-01-07 18:53:57 +0800
+
+
+Started GET "/assets/application-4ea8d1b13508bfc4d3cfdb58233e1871.js?body=1" for 127.0.0.1 at 2015-01-07 18:53:57 +0800
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-195cb410b49d75c104a5bc6ad385ac77.woff" for 127.0.0.1 at 2015-01-07 18:53:57 +0800
