@@ -10,7 +10,7 @@ Add this line to your application's Gemfile then `bundle`:
 gem 'datetime_input'
 ```
 
-### Dependency
+### Dependencies
 
 - https://github.com/TrevorS/bootstrap3-datetimepicker-rails
 - https://github.com/derekprior/momentjs-rails
