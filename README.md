@@ -12,8 +12,8 @@ gem 'datetime_input'
 
 ### Dependency
 
-https://github.com/TrevorS/bootstrap3-datetimepicker-rails
-https://github.com/derekprior/momentjs-rails
+- https://github.com/TrevorS/bootstrap3-datetimepicker-rails
+- https://github.com/derekprior/momentjs-rails
 
 ```
 $ rails g datetime_input:install
