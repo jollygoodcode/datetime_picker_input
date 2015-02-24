@@ -5,8 +5,6 @@ require "capybara/rspec"
 require "capybara/poltergeist"
 require "database_cleaner"
 
-require "fileutils"
-
 Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(
     app,
@@ -33,6 +31,7 @@ RSpec.configure do |config|
 
   config.after(:each) do
     DatabaseCleaner.clean
-    FileUtils.rm_rf "#{Rails.root}/spec/dummy/tmp/"
+    require "fileutils"
+    FileUtils.rm_rf "#{Rails.root}/tmp/"
   end
 end
