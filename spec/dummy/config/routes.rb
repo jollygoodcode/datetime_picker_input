@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'appointments#index'
 
-  mount DatetimeInput::Engine => "/datetime_input"
+  resources :appointments, only: [:index, :new, :create]
 end

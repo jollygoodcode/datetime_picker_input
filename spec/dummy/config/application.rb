@@ -9,6 +9,14 @@ require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
 Bundler.require(*Rails.groups)
+require "slim-rails"
+require "sqlite3"
+require "coffee_script"
+require "sass-rails"
+require "jquery-rails"
+require "turbolinks"
+require "bootstrap-sass"
+require "simple_form"
 require "datetime_input"
 
 module Dummy
