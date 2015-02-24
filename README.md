@@ -41,7 +41,7 @@ or `application.css`:
 
 ## Versioning
 
-Same version as https://github.com/Eonasdan/bootstrap-datetimepicker since bootstrap3-datetimepicker-rails is based on https://github.com/Eonasdan/bootstrap-datetimepicker. Current release version is 3.1.3. Bugs of this gem will release a 4th version, e.g. 3.1.3.1, 3.1.3.2.
+Same version as https://github.com/Eonasdan/bootstrap-datetimepicker since bootstrap3-datetimepicker-rails is based on https://github.com/Eonasdan/bootstrap-datetimepicker. Current release version is 4.0.0. Bugs of this gem will release a 4th version, e.g. 4.0.0.1, 4.0.0.2.
 
 ## Usage
 
