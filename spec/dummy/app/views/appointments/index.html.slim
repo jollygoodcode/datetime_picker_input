@@ -1,0 +1,13 @@
+.page-header
+  .pull-right
+    = link_to "New Appointment", new_appointment_path, class: "btn btn-primary"
+  h1 Appointments
+
+table.table
+  tr
+    th Scheduled At
+
+  - @appointments.each do |appointment|
+    tr
+      td= appointment.scheduled_at
+
