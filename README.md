@@ -1,5 +1,7 @@
 # DatetimeInput
 
+[![Build Status](https://travis-ci.org/jollygoodcode/datetime_input.svg?branch=feature%2Ftravis-ci)](https://travis-ci.org/jollygoodcode/datetime_input)
+
 Wrapper of https://github.com/TrevorS/bootstrap3-datetimepicker-rails, for use with simple_form on Rails 4+.
 
 ## Installation
