@@ -2,5 +2,5 @@
   h1 New Appointment
 
 = simple_form_for @appointment, html: { class: "form-horizontal" }  do |f|
-  = f.input :scheduled_at, as: :datetime_picker
+  = f.input :scheduled_at, as: :date_time_picker
   = f.submit

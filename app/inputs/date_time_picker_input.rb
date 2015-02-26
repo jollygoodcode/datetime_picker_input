@@ -11,8 +11,7 @@
 #
 # Refer to http://eonasdan.github.io/bootstrap-datetimepicker/#options
 # for a full list of options
-
-class DatetimePickerInput < SimpleForm::Inputs::StringInput
+class DateTimePickerInput < SimpleForm::Inputs::StringInput
   def input(wrapper_options)
     input_html_options[:type] = "text"
 

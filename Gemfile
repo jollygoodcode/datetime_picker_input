@@ -21,5 +21,5 @@ group :development do
   gem "database_cleaner"
 end
 
-# Specify your gem's dependencies in datetime_input.gemspec
+# Specify your gem's dependencies in datetime_picker_input.gemspec
 gemspec

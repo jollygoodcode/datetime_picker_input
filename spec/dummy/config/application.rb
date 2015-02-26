@@ -17,7 +17,7 @@ require "jquery-rails"
 require "turbolinks"
 require "bootstrap-sass"
 require "simple_form"
-require "datetime_input"
+require "datetime_picker_input"
 
 module Dummy
   class Application < Rails::Application

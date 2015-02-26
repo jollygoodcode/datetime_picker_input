@@ -1,15 +1,15 @@
-# DatetimeInput
+# DatetimePickerInput
 
-[![Build Status](https://travis-ci.org/jollygoodcode/datetime_input.svg?branch=feature%2Ftravis-ci)](https://travis-ci.org/jollygoodcode/datetime_input)
+[![Build Status](https://travis-ci.org/jollygoodcode/datetime_picker_input.svg?branch=feature%2Ftravis-ci)](https://travis-ci.org/jollygoodcode/datetime_picker_input)
 
-Wrapper of https://github.com/TrevorS/bootstrap3-datetimepicker-rails, for use with simple_form on Rails 4+.
+Wrapper of https://github.com/TrevorS/bootstrap3-datetimepicker-rails, for use with Boostrap 3, simple_form 3.1 on Rails 4.1+.
 
 ## Installation
 
 Add this line to your application's Gemfile then `bundle`:
 
 ```ruby
-gem 'datetime_input'
+gem 'datetime_picker_input'
 ```
 
 ### Dependencies
@@ -20,19 +20,19 @@ gem 'datetime_input'
 In JavaScript Manifest file (`application.js`), add:
 
 ```js
-//= require datetime_input
+//= require datetime_picker_input
 ```
 
 In CSS Manifest file (`application.scss`), add:
 
 ```scss
-@import 'datetime_input';
+@import 'datetime_picker_input';
 ```
 
 or `application.css`:
 
 ```css
-*= require datetime_input
+*= require datetime_picker_input
 ```
 
 ## Usage
@@ -40,7 +40,7 @@ or `application.css`:
 In view (example in slim):
 
 ```slim
-= f.input :starts_at, as: :datetime_picker, input_html:
+= f.input :starts_at, as: :date_time_picker, input_html:
   { data:
     { date_format: "YYYY-MM-DD hh:mm A",
       date_useminutes: false,
@@ -52,15 +52,15 @@ In view (example in slim):
 
 ## Customize datetime picker input
 
-datetime_input includes input by default, you can use generator to generate the input then customize it.
+This gem includes [a custom simple_form input](https://github.com/plataformatec/simple_form/wiki/Adding-custom-input-components) by default, you can use generator to generate the underlying input then customize it.
 
 First run the generator:
 
 ```bash
-$ rails g datetime_input:install
+$ rails g datetime_picker_input:install
 ```
 
-then edit the `datetime_picker_input.rb` under `app/inputs/` directory.
+then edit the `date_time_picker_input.rb` under `app/inputs/` directory.
 
 ## Versioning
 
@@ -68,7 +68,7 @@ Same version as https://github.com/Eonasdan/bootstrap-datetimepicker since boots
 
 ## Contributing
 
-1. Fork it ( https://github.com/jollygoodcode/datetime_input/fork )
+1. Fork it ( https://github.com/jollygoodcode/datetime_picker_input/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
