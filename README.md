@@ -73,3 +73,13 @@ Same version as https://github.com/Eonasdan/bootstrap-datetimepicker since boots
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+## Credits
+
+A huge THANK YOU to all our [contributors] (https://github.com/jollygoodcode/datetime_picker_input_demo/graphs/contributors)! :heart:
+
+This project is maintained by [Jolly Good Code](http://www.jollygoodcode.com).
+
+## License
+
+MIT License. See [LICENSE](LICENSE) for details.
