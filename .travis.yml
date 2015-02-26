@@ -12,4 +12,4 @@ matrix:
   fast_finish: true
 notifications:
   slack:
-    secure: ZCYEt/Q5yifjc8ZPyyHr+ugXWpaBYLx6vB1s9g2Mi+VJRGZ08uTCfFizM0yK1Hv3YB5emlPqPGlJHxJxb0ZXzwXGlsRAOE9pTinAaK5oUjVamO7q3ZdGL7FszPRxeRl7HUR5Y+2NcuJjZO7N0wkYUNrDAy0ek3BGAOoKCysC0LA=
+    secure: SH+hAIMND0/8N1jouaAKaI7dv03ousdepfvnin9eSoSSiPBkEwAdC9WpiPihulat8UDUoxxGp5VstdZc2PkrgT+w8ullMXiLBp+1ZDntH7rGUnbtAG2gIyfApx8foKWYb3Pn4zp5NJnfASOSiJ91X6zn1n/JpjAY9x3CIwQsov4=
