@@ -76,7 +76,7 @@ Same version as https://github.com/Eonasdan/bootstrap-datetimepicker since boots
 
 ## Credits
 
-A huge THANK YOU to all our [contributors] (https://github.com/jollygoodcode/datetime_picker_input_demo/graphs/contributors)! :heart:
+A huge THANK YOU to all our [contributors] (https://github.com/jollygoodcode/datetime_picker_input/graphs/contributors)! :heart:
 
 This project is maintained by [Jolly Good Code](http://www.jollygoodcode.com).
 
