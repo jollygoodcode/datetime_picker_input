@@ -52,6 +52,14 @@ In view (example in slim):
   }
 ```
 
+## Customize datetime picker input
+
+datetime_input includes input, you can use generator to generate the input and customize it. First run the generator:
+
+  $ rails g datetime_input:install
+
+then edit the `datetime_picker_input.rb` under `app/inputs/` directory.
+
 ## Contributing
 
 1. Fork it ( https://github.com/jollygoodcode/datetime_input/fork )
