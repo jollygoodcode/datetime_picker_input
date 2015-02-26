@@ -17,31 +17,27 @@ gem 'datetime_input'
 
 In JavaScript Manifest file (`application.js`), add:
 
-```
+```js
 //= require datetime_input
 ```
 
 In CSS Manifest file (`application.scss`), add:
 
-```
+```scss
 @import 'datetime_input';
 ```
 
 or `application.css`:
 
-```
+```css
 *= require datetime_input
 ```
-
-## Versioning
-
-Same version as https://github.com/Eonasdan/bootstrap-datetimepicker since bootstrap3-datetimepicker-rails is based on https://github.com/Eonasdan/bootstrap-datetimepicker. Current release version is 4.0.0. Bugs of this gem will release a 4th version, e.g. 4.0.0.1, 4.0.0.2.
 
 ## Usage
 
 In view (example in slim):
 
-```
+```slim
 = f.input :starts_at, as: :datetime_picker, input_html:
   { data:
     { date_format: "YYYY-MM-DD hh:mm A",
@@ -54,11 +50,19 @@ In view (example in slim):
 
 ## Customize datetime picker input
 
-datetime_input includes input, you can use generator to generate the input and customize it. First run the generator:
+datetime_input includes input by default, you can use generator to generate the input then customize it.
 
-  $ rails g datetime_input:install
+First run the generator:
+
+```bash
+$ rails g datetime_input:install
+```
 
 then edit the `datetime_picker_input.rb` under `app/inputs/` directory.
+
+## Versioning
+
+Same version as https://github.com/Eonasdan/bootstrap-datetimepicker since bootstrap3-datetimepicker-rails is based on https://github.com/Eonasdan/bootstrap-datetimepicker. Current release version is 4.0.0. Bugs of this gem will release a 4th version, e.g. 4.0.0.1, 4.0.0.2.
 
 ## Contributing
 
