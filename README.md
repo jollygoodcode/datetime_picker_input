@@ -15,12 +15,6 @@ gem 'datetime_input'
 - https://github.com/TrevorS/bootstrap3-datetimepicker-rails
 - https://github.com/derekprior/momentjs-rails
 
-```
-$ rails g datetime_input:install
-```
-
-This will generates a `datetime_picker_input.rb` under `app/inputs`.
-
 In JavaScript Manifest file (`application.js`), add:
 
 ```
