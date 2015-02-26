@@ -1,6 +1,6 @@
-require "datetime_input/version"
+require "datetime_picker_input/version"
 
-module DatetimeInput
+module DatetimePickerInput
   class Engine < ::Rails::Engine
     require "bootstrap3-datetimepicker-rails"
     require "momentjs-rails"
