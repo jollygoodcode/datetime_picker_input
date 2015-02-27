@@ -2,11 +2,11 @@
 
 [![Build Status](https://travis-ci.org/jollygoodcode/datetime_picker_input.svg?branch=feature%2Ftravis-ci)](https://travis-ci.org/jollygoodcode/datetime_picker_input)
 
-DatetimePickerInput allows you to easily add a JavaScript datetime picker to your Ruby on Rails, Bootstrap-enabled Simple Form input.
+DatetimePickerInput allows you to easily add a [JavaScript datetime picker](http://eonasdan.github.io/bootstrap-datetimepicker/) to your Ruby on Rails, Bootstrap-enabled Simple Form input.
 
 ## Prerequisites
 
-This gem is Rails 3.1 and 4+ compatible, and your app should already have Bootstrap and Simple Form installed.
+Rails 3.1 and 4+ compatible, and your app should already have Bootstrap and Simple Form installed.
 
 Otherwise, set up [Bootstrap](https://github.com/twbs/bootstrap-sass) and [Simple Form](https://github.com/plataformatec/simple_form) now.
 
@@ -40,7 +40,6 @@ or `application.css`:
 
 Demo app is available at [http://datetime-picker-input.herokuapp.com](http://datetime-picker-input.herokuapp.com).
 
-
 ### Simple Usage
 
 ```slim
@@ -62,9 +61,9 @@ Demo app is available at [http://datetime-picker-input.herokuapp.com](http://dat
   }
 ```
 
-[Bootstrap 3 Datepicker](https://github.com/Eonasdan/bootstrap-datetimepicker/blob/master/src/js/bootstrap-datetimepicker.js#L291) provides the option to initialize a datetime picker through the use of `data` attributes on the `input` field.
+[Bootstrap 3 Datepicker](https://github.com/Eonasdan/bootstrap-datetimepicker/blob/master/src/js/bootstrap-datetimepicker.js#L291) is able to initialize a datetime picker through the use of `data` attributes on the `input` field.
 
-To do that, modify any of the options specified in [Bootstrap 3 Datepicker's Doc](http://eonasdan.github.io/bootstrap-datetimepicker/Options/) by adding a prefix of `date` and underscoring the resulting option.
+To do that, modify any of the options specified in [Bootstrap 3 Datepicker's Doc](http://eonasdan.github.io/bootstrap-datetimepicker/Options/) by adding a prefix of `date` and underscoring the resulting option name.
 
 For example:
 
@@ -81,20 +80,20 @@ Simple do:
 $ rails g datetime_picker_input:install
 ```
 
-This will generate `datetime_picker_input.rb` under `app/inputs` directory. Then you can start customizing it.
+This will generate `datetime_picker_input.rb` under `app/inputs` directory which you can modify
 
 ## Dependencies
 
-This gem is heavily dependent on and only possible because of the great work done in these other gems:
+This gem is heavily dependent on and only possible because of the great work done in these gems:
 
 - https://github.com/TrevorS/bootstrap3-datetimepicker-rails
 - https://github.com/derekprior/momentjs-rails
 
 ## Versioning
 
-Since this gem is ultimately reliant on https://github.com/Eonasdan/bootstrap-datetimepicker, it shall have the same version as the JavaScript plugin.
+Since this gem is ultimately dependent on https://github.com/Eonasdan/bootstrap-datetimepicker, this gem shall have the same version as the JavaScript plugin - current release version is 4.0.0.
 
-Current release version is 4.0.0. Any bug fix release of this gem will have a 4th decimal added, e.g. 4.0.0.1, 4.0.0.2.
+Any bug fix release of this gem will have a 4th decimal added, e.g. 4.0.0.1, 4.0.0.2.
 
 ## Contributing
 
