@@ -2,28 +2,29 @@
 
 [![Build Status](https://travis-ci.org/jollygoodcode/datetime_picker_input.svg?branch=feature%2Ftravis-ci)](https://travis-ci.org/jollygoodcode/datetime_picker_input)
 
-Wrapper of https://github.com/TrevorS/bootstrap3-datetimepicker-rails, for use with Boostrap 3, simple_form 3.1 on Rails 4.1+.
+DatetimePickerInput allows you to easily add a JavaScript datetime picker to your Ruby on Rails, Bootstrap-enabled Simple Form input.
+
+## Prerequisites
+
+This gem is Rails 3.1 and 4+ compatible, and your app should already have Bootstrap and Simple Form installed.
+
+Otherwise, set up [Bootstrap](https://github.com/twbs/bootstrap-sass) and [Simple Form](https://github.com/plataformatec/simple_form) now.
 
 ## Installation
 
-Add this line to your application's Gemfile then `bundle`:
+Add this to your application's Gemfile then run `bundle install`:
 
 ```ruby
 gem 'datetime_picker_input'
 ```
 
-### Dependencies
-
-- https://github.com/TrevorS/bootstrap3-datetimepicker-rails
-- https://github.com/derekprior/momentjs-rails
-
-In JavaScript Manifest file (`application.js`), add:
+In the JavaScript manifest file `application.js`, add:
 
 ```js
 //= require datetime_picker_input
 ```
 
-In CSS Manifest file (`application.scss`), add:
+In the CSS manifest file `application.scss`, add:
 
 ```scss
 @import 'datetime_picker_input';
@@ -37,34 +38,63 @@ or `application.css`:
 
 ## Usage
 
-In view (example in slim):
+Demo app is available at [http://datetime-picker-input.herokuapp.com](http://datetime-picker-input.herokuapp.com).
+
+
+### Simple Usage
 
 ```slim
-= f.input :starts_at, as: :date_time_picker, input_html:
+= simple_form_for Event.new do |f|
+  f.input :when, as: :date_time_picker
+```
+
+### Customized Options
+
+```slim
+= f.input :when, as: :date_time_picker, input_html:
   { data:
-    { date_format: "YYYY-MM-DD hh:mm A",
-      date_useminutes: false,
-      date_sidebyside: false,
-      date_mindate: Time.current.strftime('%Y-%m-%d')
+    {
+      date_format: "YYYY-MM-DD hh:mm A",
+      date_day_view_header_format: 'MMM YYYY',
+      date_side_by_side: true,
+      date_min_date: Time.current.strftime('%Y-%m-%d')
     }
   }
 ```
 
-## Customize datetime picker input
+[Bootstrap 3 Datepicker](https://github.com/Eonasdan/bootstrap-datetimepicker/blob/master/src/js/bootstrap-datetimepicker.js#L291) provides the option to initialize a datetime picker through the use of `data` attributes on the `input` field.
 
-This gem includes [a custom simple_form input](https://github.com/plataformatec/simple_form/wiki/Adding-custom-input-components) by default, you can use generator to generate the underlying input then customize it.
+To do that, modify any of the options specified in [Bootstrap 3 Datepicker's Doc](http://eonasdan.github.io/bootstrap-datetimepicker/Options/) by adding a prefix of `date` and underscoring the resulting option.
 
-First run the generator:
+For example:
+
+- `dayViewHeaderFormat` to `date_day_view_header_format`
+- `minDate` to `date_min_date`
+
+## Customization
+
+To [customize the input field](https://github.com/plataformatec/simple_form/wiki/Adding-custom-input-components), you can copy `datetime_picker_input.rb` from the gem to your app by using the generator included in `datetime_picker_input`.
+
+Simple do:
 
 ```bash
 $ rails g datetime_picker_input:install
 ```
 
-then edit the `date_time_picker_input.rb` under `app/inputs/` directory.
+This will generate `datetime_picker_input.rb` under `app/inputs` directory. Then you can start customizing it.
+
+## Dependencies
+
+This gem is heavily dependent on and only possible because of the great work done in these other gems:
+
+- https://github.com/TrevorS/bootstrap3-datetimepicker-rails
+- https://github.com/derekprior/momentjs-rails
 
 ## Versioning
 
-Same version as https://github.com/Eonasdan/bootstrap-datetimepicker since bootstrap3-datetimepicker-rails is based on https://github.com/Eonasdan/bootstrap-datetimepicker. Current release version is 4.0.0. Bugs of this gem will release a 4th version, e.g. 4.0.0.1, 4.0.0.2.
+Since this gem is ultimately reliant on https://github.com/Eonasdan/bootstrap-datetimepicker, it shall have the same version as the JavaScript plugin.
+
+Current release version is 4.0.0. Any bug fix release of this gem will have a 4th decimal added, e.g. 4.0.0.1, 4.0.0.2.
 
 ## Contributing
 
