@@ -11,7 +11,7 @@
 #       } \
 #     }
 #
-# Refer to http://eonasdan.github.io/bootstrap-datetimepicker/#options for a full list of options
+# Refer to http://eonasdan.github.io/bootstrap-datetimepicker/#options for a full list of options.
 #
 class DateTimePickerInput < SimpleForm::Inputs::StringInput
   def input(wrapper_options)
