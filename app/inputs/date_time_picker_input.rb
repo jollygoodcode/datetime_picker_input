@@ -1,25 +1,24 @@
-# Example
+# Example:
 #
-# = f.input :starts_at, as: :datetime_picker, input_html:
-#   { data:
-#     { date_format: "YYYY-MM-DD hh:mm A",
-#       date_useminutes: false,
-#       date_sidebyside: false,
-#       date_mindate: Time.current.strftime('%Y-%m-%d')
+# = simple_form_for Event.new do |f|
+#   = f.input :when, as: :date_time_picker, input_html: \
+#     { data: \
+#       { \
+#         date_format: "YYYY-MM-DD hh:mm A", \
+#         date_day_view_header_format: 'MMM YYYY', \
+#         date_side_by_side: true, \
+#         date_min_date: Time.current.strftime('%Y-%m-%d') \
+#       } \
 #     }
-#   }
 #
-# Refer to http://eonasdan.github.io/bootstrap-datetimepicker/#options
-# for a full list of options
+# Refer to http://eonasdan.github.io/bootstrap-datetimepicker/#options for a full list of options.
+#
 class DateTimePickerInput < SimpleForm::Inputs::StringInput
   def input(wrapper_options)
     input_html_options[:type] = "text"
 
     input_html_options[:data] ||= {}
-    input_html_options[:data].reverse_merge!(
-      date_format: picker_pattern,
-      date_sidebyside: true
-    )
+    input_html_options[:data].reverse_merge!(date_format: picker_pattern)
 
     input_html_options[:value] ||= I18n.localize(attr_value, format: display_pattern) if attr_value.present?
 
