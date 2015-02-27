@@ -80,7 +80,7 @@ Simple do:
 $ rails g datetime_picker_input:install
 ```
 
-This will generate `datetime_picker_input.rb` under `app/inputs` directory which you can modify
+This will generate `datetime_picker_input.rb` under `app/inputs` directory which you can modify.
 
 ## Dependencies
 
