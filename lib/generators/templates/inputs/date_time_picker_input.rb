@@ -18,7 +18,7 @@ class DateTimePickerInput < SimpleForm::Inputs::StringInput
     input_html_options[:type] = "text"
 
     input_html_options[:data] ||= {}
-    input_html_options[:data].reverse_merge!(date_format: picker_pattern)
+    input_html_options[:data].reverse_merge!(date_extra_formats: [picker_pattern])
 
     input_html_options[:value] ||= I18n.localize(attr_value, format: display_pattern) if attr_value.present?
 
@@ -40,11 +40,11 @@ class DateTimePickerInput < SimpleForm::Inputs::StringInput
   private
 
     def display_pattern
-      I18n.t("datepicker.dformat", default: "%d/%m/%Y") + " " + I18n.t("timepicker.dformat", default: "%R")
+      "%Y-%m-%d %H:%M"
     end
 
     def picker_pattern
-      I18n.t("datepicker.pformat", default: "DD/MM/YYYY") + " " + I18n.t("timepicker.pformat", default: "HH:mm")
+      "YYYY-MM-DD HH:mm"
     end
 
     def attr_value
