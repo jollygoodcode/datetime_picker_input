@@ -1,0 +1,3 @@
+= simple_form_for @appointment, html: { class: "form-horizontal" }  do |f|
+  = f.input :scheduled_at, as: :date_time_picker, input_html: input_html_options
+  = f.submit
