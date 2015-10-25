@@ -47,12 +47,13 @@ Demo app is available at [http://datetime-picker-input.herokuapp.com](http://dat
   f.input :when, as: :date_time_picker
 ```
 
-By default, when you select a value from the DateTime picker, we would default the format of the value
-to `YYYY-MM-DD HH:mm:ss Z`, i.e. `2015-10-25 14:33:02 +0800`.
-This ensures that, out of the box, this value would be passed on to the Rails backend
+By default (without config), when you select a value from the DateTime picker, the format of the value
+defaults to `YYYY-MM-DD HH:mm:ss Z`, i.e. `2015-10-25 14:33:02 +0800`.
+
+This ensures that, out of the box, this value (with Time Zone) would be passed on to the Rails backend
 and be saved as a DateTime value with the *correct Time Zone*.
 
-Beneath the hood, Moment is used to parse and format value on the DateTime picker.
+Beneath the hood, Moment.js is used to parse and format value on the DateTime picker.
 For other valid formats, please refer to [their Docs](http://momentjs.com/docs/#/displaying/).
 
 #### Warning!
