@@ -19,7 +19,7 @@ describe "DateTimePickerInput", type: :helper do
 
       it "includes default `date_extra_formats" do
         output = input_for(obj, :when, as: :date_time_picker)
-        expect(output).to match /data-date-extra-formats=.*YYYY-MM-DD HH:mm.*"/
+        expect(output).to match /data-date-format=.*YYYY-MM-DD HH:mm:ss ZZ.*"/
       end
     end
 
@@ -29,7 +29,7 @@ describe "DateTimePickerInput", type: :helper do
 
       it "includes formatted value" do
         output = input_for(obj, :when, as: :date_time_picker)
-        expect(output).to match /value="#{Regexp.quote(time.strftime("%Y-%m-%d %H:%M"))}"/
+        expect(output).to match /value="#{Regexp.quote(time.strftime("%Y-%m-%d %H:%M:%S %z"))}"/
       end
     end
   end

@@ -4,7 +4,7 @@
 #   = f.input :when, as: :date_time_picker, input_html: \
 #     { data: \
 #       { \
-#         date_format: "YYYY-MM-DD hh:mm A", \
+#         date_format: "YYYY-MM-DD hh:mm A Z", \
 #         date_day_view_header_format: 'MMM YYYY', \
 #         date_side_by_side: true, \
 #         date_min_date: Time.current.strftime('%Y-%m-%d') \
@@ -18,7 +18,7 @@ class DateTimePickerInput < SimpleForm::Inputs::StringInput
     input_html_options[:type] = "text"
 
     input_html_options[:data] ||= {}
-    input_html_options[:data].reverse_merge!(date_extra_formats: [picker_pattern])
+    input_html_options[:data].reverse_merge!(date_format: picker_pattern)
 
     input_html_options[:value] ||= I18n.localize(attr_value, format: display_pattern) if attr_value.present?
 
@@ -40,11 +40,11 @@ class DateTimePickerInput < SimpleForm::Inputs::StringInput
   private
 
     def display_pattern
-      "%Y-%m-%d %H:%M"
+      "%Y-%m-%d %H:%M:%S %z"
     end
 
     def picker_pattern
-      "YYYY-MM-DD HH:mm"
+      "YYYY-MM-DD HH:mm:ss ZZ"
     end
 
     def attr_value
