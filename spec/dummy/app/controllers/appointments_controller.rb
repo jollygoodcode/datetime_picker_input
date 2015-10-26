@@ -1,4 +1,6 @@
 class AppointmentsController < ApplicationController
+  around_action :use_current_timezone
+
   def index
     @appointments = Appointment.all
   end
@@ -28,4 +30,14 @@ class AppointmentsController < ApplicationController
       render :edit
     end
   end
+
+  private
+    def use_current_timezone(&block)
+      Time.use_zone(current_timezone, &block)
+    end
+
+    def current_timezone
+      ENV.fetch('CURRENT_TIMEZONE') { 'UTC' }
+    end
+
 end

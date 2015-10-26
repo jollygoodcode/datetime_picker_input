@@ -29,7 +29,7 @@ describe "DateTimePickerInput", type: :helper do
 
       it "includes formatted value" do
         output = input_for(obj, :when, as: :date_time_picker)
-        expect(output).to match /value="#{Regexp.quote(time.strftime("%Y-%m-%d %H:%M:%S %z"))}"/
+        expect(output).to match /value="#{Regexp.quote(time.utc.strftime("%Y-%m-%d %H:%M:%S %z"))}"/
       end
     end
   end

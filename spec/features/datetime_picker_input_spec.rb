@@ -5,34 +5,51 @@ feature "datetime input", js: true do
   [
     [
       "default",                   # context
+      nil,                         # no server timezone
       { data: { date_format: "YYYY-MM-DD HH:mm:ss ZZ" } },
       "2015-10-25 00:00:00 +0800", # iso_format_string
       "2015-10-25 00:00:00 +0800", # date_format_output
-      "2015-10-24 16:00:00 +0000", # raw_input_value
     ],
 
     [
-      "custom with timezone",      # context
+      "default with server tz",    # context
+      'Central Time (US & Canada)',# server timezone does not matter
+      { data: { date_format: "YYYY-MM-DD HH:mm:ss ZZ" } },
+      "2015-10-25 00:00:00 +0800", # iso_format_string
+      "2015-10-25 00:00:00 +0800", # date_format_output
+    ],
+
+    [
+      "custom with tz",            # context
+      nil,                         # no server timezone
       { data: { date_format: "DD.MM.YYYY hh:mm A ZZ" } },
       "2015-10-25 00:00:00 +0800", # iso_format_string
       "25.10.2015 12:00 AM +0800", # date_format_output
-      "2015-10-24 16:00:00 +0000", # raw_input_value
+    ],
+
+    [
+      "custom with tz & server tz",# context
+      'Central Time (US & Canada)',# server timezone does not matter
+      { data: { date_format: "DD.MM.YYYY hh:mm A ZZ" } },
+      "2015-10-25 00:00:00 +0800", # iso_format_string
+      "25.10.2015 12:00 AM +0800", # date_format_output
     ],
 
     [
       "custom no timezone",        # context
+      "Singapore",                 # server timezone required!
       { data: { date_format: "YYYY.MM.DD hh:mm A" } },
       "2015-10-25 00:00:00 +0800", # iso_format_string
       "2015.10.25 12:00 AM",       # date_format_output
-      "2015-10-24 16:00:00 +0000", # raw_input_value
     ],
 
-  ].each do |context_name, input_html_options, iso_format_string, date_format_output, raw_input_value|
+  ].each do |context_name, server_timezone, input_html_options, iso_format_string, date_format_output|
 
     context context_name do
       before do
         Appointment.delete_all
         allow_any_instance_of(ApplicationHelper).to receive(:input_html_options).and_return(input_html_options)
+        allow_any_instance_of(AppointmentsController).to receive(:current_timezone).and_return(server_timezone)
       end
 
       context 'create' do
@@ -50,8 +67,8 @@ feature "datetime input", js: true do
             click_button 'Create Appointment'
           }.to change {
             Appointment.last.try(:scheduled_at)
-          }.to eq(DateTime.parse(date_format_output))
-          # value set in db is `DateTime.parse(date_format_output)`
+          }.to eq(Time.parse(iso_format_string))
+          # value set in db must be correct
         end
 
         scenario 'rejected form post' do
@@ -71,21 +88,11 @@ feature "datetime input", js: true do
 
         scenario 'should convert raw_input_value to date_format_output' do
           visit edit_appointment_path(appointment)
-          expect(find_field('Scheduled at')[:value]).to eq(raw_input_value)
+          expect(find_field('Scheduled at')[:value]).to eq(Time.parse(iso_format_string).utc.strftime("%Y-%m-%d %H:%M:%S %z"))
           expect(find_field('Scheduled at').value).to eq(date_format_output)
         end
       end
     end
 
-  end
-
-  scenario "can create a new appointment with specific datetime" do
-    visit root_path
-    click_on "New Appointment"
-    expect(page).to have_content "Scheduled at"
-    page.execute_script("$('input.date_time_picker').val('01/01/2046')")
-    page.find("body").click # blur
-    click_button "Create Appointment"
-    expect(page).to have_content "2046-01-01 00:00:00 UTC"
   end
 end
