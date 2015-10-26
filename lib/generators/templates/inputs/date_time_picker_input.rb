@@ -20,7 +20,10 @@ class DateTimePickerInput < SimpleForm::Inputs::StringInput
     input_html_options[:data] ||= {}
     input_html_options[:data].reverse_merge!(date_format: picker_pattern)
 
-    input_html_options[:value] ||= I18n.localize(attr_value, format: display_pattern) if attr_value.present?
+    input_html_options[:data][:date_extra_formats] ||= []
+    input_html_options[:data][:date_extra_formats] << picker_pattern
+
+    input_html_options[:value] ||= I18n.localize(attr_value.utc, format: display_pattern) if attr_value.present?
 
     template.content_tag :div, class: "input-group date datetime_picker" do
       input = super(wrapper_options)
@@ -39,15 +42,15 @@ class DateTimePickerInput < SimpleForm::Inputs::StringInput
 
   private
 
-    def display_pattern
-      "%Y-%m-%d %H:%M:%S %z"
-    end
+  def display_pattern
+    "%Y-%m-%d %H:%M:%S %z"
+  end
 
-    def picker_pattern
-      "YYYY-MM-DD HH:mm:ss ZZ"
-    end
+  def picker_pattern
+    "YYYY-MM-DD HH:mm:ss ZZ"
+  end
 
-    def attr_value
-      object.send(attribute_name) if object.respond_to? attribute_name
-    end
+  def attr_value
+    object.send(attribute_name) if object.respond_to? attribute_name
+  end
 end
