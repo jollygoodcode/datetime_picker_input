@@ -76,9 +76,9 @@ class AppointmentsController < ApplicationController
 end          
 ```
 
-This uses your `user`'s timezone, so that the DateTime gets stored as expected (from the user's perspective).
+This uses your `user`'s Time Zone, so that the DateTime gets stored and will be displayed as expected (from the user's perspective).
 
-We are also assuming that, in this example, your `user` has set a custom Time Zone, 
+We are also assuming that, in this example, the `current_user` has set a custom Time Zone, 
 otherwise, you should just use the gem's default. 
 
 Times are hard..
