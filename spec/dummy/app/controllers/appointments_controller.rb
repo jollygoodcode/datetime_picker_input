@@ -10,7 +10,7 @@ class AppointmentsController < ApplicationController
   def create
     @appointment = Appointment.new(params.require(:appointment).permit(:scheduled_at))
     if @appointment.save
-      redirect_to root_url, notice: 'Appointment was successfully created.'
+      redirect_to edit_appointment_path(@appointment), notice: 'Appointment was successfully created.'
     else
       render :new
     end
@@ -22,8 +22,8 @@ class AppointmentsController < ApplicationController
 
   def update
     @appointment = Appointment.find(params[:id])
-    if @appointment.update(model_params)
-      redirect_to root_url, notice: "Appointment was successfully updated."
+    if @appointment.update(params.require(:appointment).permit(:scheduled_at))
+      redirect_to edit_appointment_path(@appointment), notice: "Appointment was successfully updated."
     else
       render :edit
     end
