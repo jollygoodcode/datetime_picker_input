@@ -1,6 +1,6 @@
 # DatetimePickerInput
 
-[![Build Status](https://travis-ci.org/jollygoodcode/datetime_picker_input.svg?branch=feature%2Ftravis-ci)](https://travis-ci.org/jollygoodcode/datetime_picker_input)
+[![Gem Version](https://badge.fury.io/rb/datetime_picker_input.svg)](https://badge.fury.io/rb/datetime_picker_input) [![Build Status](https://travis-ci.org/jollygoodcode/datetime_picker_input.svg?branch=feature%2Ftravis-ci)](https://travis-ci.org/jollygoodcode/datetime_picker_input)
 
 DatetimePickerInput allows you to easily add a [JavaScript datetime picker](http://eonasdan.github.io/bootstrap-datetimepicker/) to your Ruby on Rails, Bootstrap-enabled Simple Form input.
 
@@ -63,23 +63,23 @@ then you will need to implement your attribute setter and getter in Rails backen
 to save and display the value correctly in your desired Time Zone.
 
 One way to do this is to implement an `around_filter` on your controllers like so:
-  
+
 ```ruby
 class AppointmentsController < ApplicationController
   around_action :use_current_timezone
-  
+
   # .. your controller code
-  
+
   def use_current_timezone(&block)
     Time.use_zone(current_user.timezone, &block)
   end
-end          
+end
 ```
 
 This uses your `user`'s Time Zone, so that the DateTime gets stored and will be displayed as expected (from the user's perspective).
 
-We are also assuming that, in this example, the `current_user` has set a custom Time Zone, 
-otherwise, you should just use the gem's default. 
+We are also assuming that, in this example, the `current_user` has set a custom Time Zone,
+otherwise, you should just use the gem's default.
 
 Times are hard..
 
