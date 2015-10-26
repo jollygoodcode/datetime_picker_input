@@ -4,7 +4,7 @@
 #   = f.input :when, as: :date_time_picker, input_html: \
 #     { data: \
 #       { \
-#         date_format: "YYYY-MM-DD hh:mm A", \
+#         date_format: "YYYY-MM-DD hh:mm A Z", \
 #         date_day_view_header_format: 'MMM YYYY', \
 #         date_side_by_side: true, \
 #         date_min_date: Time.current.strftime('%Y-%m-%d') \
@@ -20,7 +20,10 @@ class DateTimePickerInput < SimpleForm::Inputs::StringInput
     input_html_options[:data] ||= {}
     input_html_options[:data].reverse_merge!(date_format: picker_pattern)
 
-    input_html_options[:value] ||= I18n.localize(attr_value, format: display_pattern) if attr_value.present?
+    input_html_options[:data][:date_extra_formats] ||= []
+    input_html_options[:data][:date_extra_formats] << picker_pattern
+
+    input_html_options[:value] ||= I18n.localize(attr_value.utc, format: display_pattern) if attr_value.present?
 
     template.content_tag :div, class: "input-group date datetime_picker" do
       input = super(wrapper_options)
@@ -40,11 +43,11 @@ class DateTimePickerInput < SimpleForm::Inputs::StringInput
   private
 
     def display_pattern
-      I18n.t("datepicker.dformat", default: "%d/%m/%Y") + " " + I18n.t("timepicker.dformat", default: "%R")
+      "%Y-%m-%d %H:%M:%S %z"
     end
 
     def picker_pattern
-      I18n.t("datepicker.pformat", default: "DD/MM/YYYY") + " " + I18n.t("timepicker.pformat", default: "HH:mm")
+      "YYYY-MM-DD HH:mm:ss ZZ"
     end
 
     def attr_value

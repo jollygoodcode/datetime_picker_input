@@ -12,4 +12,6 @@
 *.o
 *.a
 mkmf.log
+/spec/dummy/db/
+/spec/dummy/log/
 /spec/dummy/tmp/

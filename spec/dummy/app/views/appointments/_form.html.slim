@@ -1,0 +1,6 @@
+= simple_form_for @appointment, html: { class: "form-horizontal" }  do |f|
+  = f.input :scheduled_at, as: :date_time_picker, input_html: input_html_options
+  = f.submit
+
+javascript:
+  $('form').after($('<pre style="margin-top:1em;"></pre>').text("value=" + $('#appointment_scheduled_at')[0].getAttribute('value')));

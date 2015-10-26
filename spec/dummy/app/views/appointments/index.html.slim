@@ -9,5 +9,5 @@ table.table
 
   - @appointments.each do |appointment|
     tr
-      td= appointment.scheduled_at
+      td= link_to appointment.scheduled_at, edit_appointment_path(appointment)
 
