@@ -1,3 +1,3 @@
 module DatetimePickerInput
-  VERSION = "4.0.0"
+  VERSION = "4.17.37"
 end
