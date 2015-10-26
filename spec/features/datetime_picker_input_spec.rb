@@ -67,7 +67,7 @@ feature "datetime input", js: true do
             click_button 'Create Appointment'
           }.to change {
             Appointment.last.try(:scheduled_at)
-          }.to eq(Time.parse(iso_format_string))
+          }.to eq(Time.zone.parse(iso_format_string))
           # value set in db must be correct
         end
 
@@ -88,7 +88,7 @@ feature "datetime input", js: true do
 
         scenario 'should convert raw_input_value to date_format_output' do
           visit edit_appointment_path(appointment)
-          expect(find_field('Scheduled at')[:value]).to eq(Time.parse(iso_format_string).utc.strftime("%Y-%m-%d %H:%M:%S %z"))
+          expect(find_field('Scheduled at')[:value]).to eq(Time.zone.parse(iso_format_string).utc.strftime("%Y-%m-%d %H:%M:%S %z"))
           expect(find_field('Scheduled at').value).to eq(date_format_output)
         end
       end
