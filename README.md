@@ -62,6 +62,27 @@ However, if you do change the format (like in the Customized Options example),
 then you will need to implement your attribute setter and getter in Rails backend
 to save and display the value correctly in your desired Time Zone.
 
+One way to do this is to implement an `around_filter` on your controllers like so:
+  
+```ruby
+class AppointmentsController < ApplicationController
+  around_action :use_current_timezone
+  
+  # .. your controller code
+  
+  def use_current_timezone(&block)
+    Time.use_zone(current_user.timezone, &block)
+  end
+end          
+```
+
+This uses your `user`'s timezone, so that the DateTime gets stored as expected (from the user's perspective).
+
+We are also assuming that, in this example, your `user` has set a custom Time Zone, 
+otherwise, you should just use the gem's default. 
+
+Times are hard..
+
 ### Customized Options
 
 ```slim
