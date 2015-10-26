@@ -20,6 +20,9 @@ class DateTimePickerInput < SimpleForm::Inputs::StringInput
     input_html_options[:data] ||= {}
     input_html_options[:data].reverse_merge!(date_format: picker_pattern)
 
+    input_html_options[:data][:date_extra_formats] ||= []
+    input_html_options[:data][:date_extra_formats] << picker_pattern
+
     input_html_options[:value] ||= I18n.localize(attr_value.utc, format: display_pattern) if attr_value.present?
 
     template.content_tag :div, class: "input-group date datetime_picker" do
