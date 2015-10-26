@@ -1,51 +1,49 @@
 require "feature_helper"
 
 feature "datetime input", js: true do
+  let(:datetime_value) { Time.parse("2015-10-25 00:00:00") }
 
   [
     [
       "default",                   # context
       nil,                         # no server timezone
       { data: { date_format: "YYYY-MM-DD HH:mm:ss ZZ" } },
-      "2015-10-25 00:00:00 +0800", # iso_format_string
-      "2015-10-25 00:00:00 +0800", # date_format_output
+      "%F %H:%M:%S %z",            # date_format
     ],
 
     [
       "default with server tz",    # context
       'Central Time (US & Canada)',# server timezone does not matter
       { data: { date_format: "YYYY-MM-DD HH:mm:ss ZZ" } },
-      "2015-10-25 00:00:00 +0800", # iso_format_string
-      "2015-10-25 00:00:00 +0800", # date_format_output
+      "%F %H:%M:%S %z",            # date_format
     ],
 
     [
       "custom with tz",            # context
       nil,                         # no server timezone
       { data: { date_format: "DD.MM.YYYY hh:mm A ZZ" } },
-      "2015-10-25 00:00:00 +0800", # iso_format_string
-      "25.10.2015 12:00 AM +0800", # date_format_output
+      "%d.%m.%Y %I:%M %p %z",      # date_format
     ],
 
     [
       "custom with tz & server tz",# context
       'Central Time (US & Canada)',# server timezone does not matter
       { data: { date_format: "DD.MM.YYYY hh:mm A ZZ" } },
-      "2015-10-25 00:00:00 +0800", # iso_format_string
-      "25.10.2015 12:00 AM +0800", # date_format_output
+      "%d.%m.%Y %I:%M %p %z",      # date_format
     ],
 
     [
       "custom no timezone",        # context
-      "Singapore",                 # server timezone required!
+      TimeZone::Local.get().name,  # server timezone required!
       { data: { date_format: "YYYY.MM.DD hh:mm A" } },
-      "2015-10-25 00:00:00 +0800", # iso_format_string
-      "2015.10.25 12:00 AM",       # date_format_output
+      "%Y.%m.%d %I:%M %p",         # date_format
     ],
 
-  ].each do |context_name, server_timezone, input_html_options, iso_format_string, date_format_output|
+  ].each do |context_name, server_timezone, input_html_options, date_format|
 
     context context_name do
+      let(:date_format_output) { datetime_value.strftime(date_format) }
+
       before do
         Appointment.delete_all
         allow_any_instance_of(ApplicationHelper).to receive(:input_html_options).and_return(input_html_options)
@@ -59,7 +57,6 @@ feature "datetime input", js: true do
           page.execute_script("$('input.date_time_picker').val('#{date_format_output}')")
           page.find("body").click # blur
           expect(find_field('Scheduled at').value).to eq(date_format_output)
-          # accepts keying in `iso_format_string` and will auto convert input[value] to `date_format_output` onblur
         end
 
         scenario 'accepted form post' do
@@ -67,7 +64,7 @@ feature "datetime input", js: true do
             click_button 'Create Appointment'
           }.to change {
             Appointment.last.try(:scheduled_at)
-          }.to eq(Time.zone.parse(iso_format_string))
+          }.to eq(datetime_value)
           # value set in db must be correct
         end
 
@@ -84,12 +81,12 @@ feature "datetime input", js: true do
       end
 
       context 'edit' do
-        let(:appointment) { Appointment.create(scheduled_at: iso_format_string) }
+        let(:appointment) { Appointment.create(scheduled_at: datetime_value) }
 
         scenario 'should convert raw_input_value to date_format_output' do
           visit edit_appointment_path(appointment)
-          expect(find_field('Scheduled at')[:value]).to eq(Time.zone.parse(iso_format_string).utc.strftime("%Y-%m-%d %H:%M:%S %z"))
           expect(find_field('Scheduled at').value).to eq(date_format_output)
+          expect(find_field('Scheduled at')[:value]).to eq(datetime_value.utc.strftime("%Y-%m-%d %H:%M:%S %z"))
         end
       end
     end

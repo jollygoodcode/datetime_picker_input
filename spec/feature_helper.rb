@@ -4,6 +4,7 @@ require "capybara/rails"
 require "capybara/rspec"
 require "capybara/poltergeist"
 require "database_cleaner"
+require "timezone_local"
 
 Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(

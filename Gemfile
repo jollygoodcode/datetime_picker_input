@@ -19,6 +19,7 @@ group :development do
   gem "launchy"
   gem "poltergeist"
   gem "database_cleaner"
+  gem "timezone_local"
 end
 
 # Specify your gem's dependencies in datetime_picker_input.gemspec
