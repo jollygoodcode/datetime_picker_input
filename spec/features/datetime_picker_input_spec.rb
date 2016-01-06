@@ -86,7 +86,6 @@ feature "datetime input", js: true do
         scenario 'should convert raw_input_value to date_format_output' do
           visit edit_appointment_path(appointment)
           expect(find_field('Scheduled at').value).to eq(date_format_output)
-          expect(find_field('Scheduled at')[:value]).to eq(datetime_value.utc.strftime("%Y-%m-%d %H:%M:%S %z"))
         end
       end
     end
