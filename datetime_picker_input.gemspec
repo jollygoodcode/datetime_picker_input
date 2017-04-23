@@ -18,6 +18,6 @@ Gem::Specification.new do |spec|
   spec.test_files    = Dir["spec/**/*"]
   spec.require_paths = %w(lib)
 
-  spec.add_runtime_dependency "bootstrap3-datetimepicker-rails", "~> 4.17.37"
-  spec.add_runtime_dependency "momentjs-rails", "~> 2.10.6"
+  spec.add_runtime_dependency "bootstrap3-datetimepicker-rails", "~> 4.17.47"
+  spec.add_runtime_dependency "momentjs-rails", "~> 2.17.1"
 end
