@@ -4,7 +4,7 @@ group :development do
   gem "rake"
   gem "bundler"
 
-  gem "rails", ">= 4.1.9"
+  gem "rails", "~> 5.1.0.rc2"
   gem "slim-rails"
   gem "sqlite3"
   gem "sass-rails"
