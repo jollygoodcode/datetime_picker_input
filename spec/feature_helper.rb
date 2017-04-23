@@ -22,7 +22,7 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = false
 
   config.before(:suite) do
-    DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner.strategy = :truncation, { except: %w[ar_internal_metadata]}
   end
 
   config.before(:each) do
