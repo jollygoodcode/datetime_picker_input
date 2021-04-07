@@ -29,7 +29,7 @@ class DateTimePickerInput < SimpleForm::Inputs::StringInput
       input = super(wrapper_options)
       input += template.content_tag :span, class: "input-group-btn" do
         template.content_tag :button, class: "btn btn-default", type: "button" do
-          template.content_tag :i, "", class: "glyphicon glyphicon-calendar"
+          template.content_tag :i, "", class: "fa fa-calendar"
         end
       end
       input
